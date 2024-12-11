@@ -2,127 +2,83 @@
   "analyticsCode": "",
   "pageLayout": "two-column",
   "basics": {
-    "name": "MiraHikari",
-    "label": "Senior Full Stack Developer",
+    "name": "Ryoma Ohtani",
+    "label": "",
     "image": "/avatar.png",
-    "email": "mirahikari@gcxstudio.cn",
+    "email": "jukenohtani@gmail.com",
     "url": "https://www.gcxstudio.cn",
     "summary": "Born in 2010, I primarily work with TypeScript and JavaScript for full-stack development, and enjoy working with various technologies.",
     "theme": "red",
     "location": {
-      "address": "Nanchang",
-      "city": "Jiangxi Province",
-      "countryCode": "CN",
-      "region": "China"
+      "address": "Chiba",
+      "city": "Kashiwa",
+      "countryCode": "81",
+      "region": "Japan"
     },
     "profiles": [
       {
-        "network": "Bilibili",
-        "icon": "ri:bilibili-line",
-        "username": "MiraHikari",
-        "url": "https://space.bilibili.com/480025691"
-      },
-      {
-        "network": "QQ",
-        "icon": "ri:qq-fill",
-        "username": "Gong_cx",
-        "url": "https://admin.qidian.qq.com/static_proxy/b2b-qq/wpa-link/index.html#/person?uin=3175992523"
+        "network": "X",
+        "icon": "ri:twitter-x-line",
+        "username": "Ryo",
+        "url": "https://x.com/d7zPa0NDyA59529"
       },
       {
         "network": "GitHub",
         "icon": "mdi:github",
-        "username": "MiraHikari",
-        "url": "https://github.com/MiraHikari"
+        "username": "Ryoma0101",
+        "url": "https://github.com/Ryoma0101"
       }
     ],
     "beian": {
-      "mint": "赣ICP备2021005460号-1",
-      "police": "赣公网安备 36010302000349号"
+      "mint": "",
+      "police": ""
     }
-  },
-  "images": {
-    "intro": "Photography is the art of light, and images are the contours of memory.",
-    "list": [
-      {
-        "image": "https://i0.hdslb.com/bfs/article/6720a7355fd11b9666e2716cadf04e45480025691.jpg@90q_1e_1c.webp",
-        "alt": "Sunset in Nanchang",
-        "desc": "Shot on a sunny day in Nanchang. 2024.10.05"
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/82f680f56532d942f74d86801abf49ea480025691.jpg@90q_1e_1c.webp",
-        "alt": "My Cat",
-        "desc": "A Ragdoll cat who stayed for a year. She's a girl."
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/14e6ae3c368b0eddeeb2b5c338239486480025691.jpg@90q_1e_1c.webp",
-        "alt": "Emoji",
-        "desc": "True, dude"
-      },
-      {
-        "image": "https://i0.hdslb.com/bfs/article/fe1737e9d7b6c2b21eedaf60b6dc9f86480025691.jpg@90q_1e_1c.webp",
-        "alt": "Cat Kernel Crashed",
-        "desc": "Cat Kernel Crashed"
-      }
-    ]
   },
   "education": [
     {
-      "institution": "Nanchang No.27 Middle School",
+      "institution": "東京理科大学",
       "url": "",
-      "area": "Regular Student",
+      "area": "創域理工学部 先端化学科",
       "studyType": "Full-time student",
-      "startDate": "2021-9-01",
+      "startDate": "2022-4-01",
       "endDate": null
     }
   ],
   "certificates": [
     {
-      "name": "Success has lived a day in the world.",
-      "date": "2010-04-14",
-      "url": "",
-      "issuer": "Myself"
-    },
-    {
-      "name": "TCCP - Senior Cloud Architecture Engineer",
-      "date": "2023-05-01",
-      "url": "",
-      "issuer": "Tencent Cloud"
+      "name": "Data Science Education Program Level 1 (Literacy)",
+      "date": "2024-03-11",
+      "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/SjR6UlNTandId0tiU24zR0YvQjRjUT09",
+      "issuer": "東京理科大学"
     }
   ],
   "work": [
     {
-      "name": "Sgguo Development Team",
-      "position": "Full-stack Developer",
-      "location_type": "Remote",
-      "location": "CN",
-      "url": "https://github.com/Sgguo-Development-Team",
-      "startDate": "2022-06-01",
+      "name": "株式会社Shinonome",
+      "position": "データエンジニア",
+      "location_type": "On-site",
+      "location": "JP",
+      "url": "https://shinonome.com",
+      "startDate": "2024-05-01",
       "endDate": null,
-      "summary": "Developing high-availability full-stack projects.",
+      "summary": "法人向け DX ツール開発に参加し、アルゴリズム設計を担当。",
       "highlights": [
-        "Enhanced internal workflow efficiency by 30%."
+        "非機械学習アルゴリズムを新規開発。",
+        "既存業務プロセスの効率化を実現。"
       ],
-      "responsibilities": [
-        "Developed and maintained backend services using Node.js and Golang."
-      ],
+      "responsibilities": ["データ処理および分析用アルゴリズムの設計と実装。"],
       "achievements": [
-        "Implemented a cloud drive and verification code system."
+        "プロジェクト内の主要機能に安定したアルゴリズムを導入。",
+        "非効率なプロセスを分析し、具体的な改善案を提案。"
       ],
       "skills": {
-        "PHP": "simple-icons:php",
-        "Node": "ri:nodejs-line",
-        "Golang": "simple-icons:go",
-        "Next.js": "ri:nextjs-fill",
-        "React": "mdi:react",
-        "SQL": "simple-icons:mysql",
+        "Python": "mdi:language-python",
         "Git": "mdi:git",
-        "GitHub": "mdi:github",
-        "NestJS": "simple-icons:nestjs",
-        "Vue": "mdi:vuejs"
+        "GitHub": "mdi:github"
       }
     },
     {
-      "name": "Riddle Town Team",
+      "name": "PlayGround",
       "position": "Full-stack Developer",
       "location_type": "Remote",
       "location": "CN",
@@ -130,16 +86,12 @@
       "startDate": "2023-01-01",
       "endDate": "2024-02-11",
       "summary": "Led page design and account systems.",
-      "highlights": [
-        "Completed 95% of project content."
-      ],
+      "highlights": ["Completed 95% of project content."],
       "responsibilities": [
         "Developed complete pages.",
         "Integrated user-facing elements with server-side logic."
       ],
-      "achievements": [
-        "Ensured smooth project execution."
-      ],
+      "achievements": ["Ensured smooth project execution."],
       "skills": {
         "HTML": "simple-icons:html5",
         "CSS": "ri:css3-fill",
@@ -158,36 +110,48 @@
       }
     }
   ],
+  "affiliation": [
+    {
+      "name": "Example Organization",
+      "position": "Member",
+      "startDate": "2022-04-01",
+      "endDate": null,
+      "activities": [
+        "Organized monthly community events",
+        "Managed a team of 5 volunteers"
+      ],
+      "responsibilities": [
+        "Handled event logistics",
+        "Maintained communication channels"
+      ],
+      "achievements": ["Increased member engagement by 20%"],
+      "url": "https://example.org",
+      "skills": {
+        "Event Planning": "mdi:calendar",
+        "Communication": "mdi:message"
+      },
+      "location": "Tokyo, Japan"
+    }
+  ],
+
   "skills": [
     {
       "name": "HTML",
       "icon": "simple-icons:html5",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend"
-      ]
+      "keywords": ["Web Development", "Frontend"]
     },
     {
       "name": "CSS",
       "icon": "ri:css3-fill",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "Responsive Design"
-      ]
+      "keywords": ["Web Development", "Frontend", "Responsive Design"]
     },
     {
       "name": "JavaScript",
       "icon": "simple-icons:javascript",
       "level": "Expert",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "Backend",
-        "Fullstack"
-      ]
+      "keywords": ["Web Development", "Frontend", "Backend", "Fullstack"]
     },
     {
       "name": "Tailwind",
@@ -215,55 +179,31 @@
       "name": "Node",
       "icon": "ri:nodejs-line",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "JavaScript",
-        "Server"
-      ]
+      "keywords": ["Web Development", "Backend", "JavaScript", "Server"]
     },
     {
       "name": "SQL",
       "icon": "simple-icons:mysql",
       "level": "Intermediate",
-      "keywords": [
-        "Databases",
-        "SQL",
-        "Data Storage",
-        "Backend"
-      ]
+      "keywords": ["Databases", "SQL", "Data Storage", "Backend"]
     },
     {
       "name": "MongoDB",
       "icon": "simple-icons:mongodb",
       "level": "Intermediate",
-      "keywords": [
-        "Databases",
-        "File",
-        "Data Storage",
-        "Backend"
-      ]
+      "keywords": ["Databases", "File", "Data Storage", "Backend"]
     },
     {
       "name": "Git",
       "icon": "mdi:git",
       "level": "Intermediate",
-      "keywords": [
-        "Version Control",
-        "Collaboration",
-        "Source Code"
-      ]
+      "keywords": ["Version Control", "Collaboration", "Source Code"]
     },
     {
       "name": "GitHub",
       "icon": "mdi:github",
       "level": "Expert",
-      "keywords": [
-        "Version Control",
-        "Collaboration",
-        "Source Code",
-        "Git"
-      ]
+      "keywords": ["Version Control", "Collaboration", "Source Code", "Git"]
     },
     {
       "name": "Next.js",
@@ -281,193 +221,121 @@
       "name": "React",
       "icon": "mdi:react",
       "level": "Expert",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "JavaScript Library",
-        "UI"
-      ]
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
     },
     {
       "name": "Vue",
       "icon": "mdi:vuejs",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "JavaScript Library",
-        "UI"
-      ]
+      "keywords": ["Web Development", "Frontend", "JavaScript Library", "UI"]
     },
     {
       "name": "Docker",
       "icon": "mdi:docker",
       "level": "Intermediate",
-      "keywords": [
-        "Virtual Environments",
-        "Backend"
-      ]
+      "keywords": ["Virtual Environments", "Backend"]
     },
     {
       "name": "NestJS",
       "icon": "simple-icons:nestjs",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "IOC"
-      ]
+      "keywords": ["Web Development", "Backend", "IOC"]
     },
     {
       "name": "Vite",
       "icon": "simple-icons:vite",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "Build Tool"
-      ]
+      "keywords": ["Web Development", "Frontend", "Build Tool"]
     },
     {
       "name": "WordPress",
       "icon": "ri:wordpress-fill",
       "level": "Intermediate",
-      "keywords": [
-        "PHP",
-        "Fullstack",
-        "Frontend"
-      ]
+      "keywords": ["PHP", "Fullstack", "Frontend"]
     },
     {
       "name": "Golang",
       "icon": "simple-icons:go",
       "level": "Beginner",
-      "keywords": [
-        "Backend",
-        "Cloud Service"
-      ]
+      "keywords": ["Backend", "Cloud Service"]
     },
     {
       "name": "Astro",
       "icon": "simple-icons:astro",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Frontend",
-        "SSR",
-        "Static Generation"
-      ]
+      "keywords": ["Web Development", "Frontend", "SSR", "Static Generation"]
     },
     {
       "name": "PHP",
       "icon": "simple-icons:php",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "Fullstack"
-      ]
+      "keywords": ["Web Development", "Backend", "Fullstack"]
     },
     {
       "name": "Nginx",
       "icon": "simple-icons:nginx",
       "level": "Intermediate",
-      "keywords": [
-        "Web Development",
-        "Backend",
-        "Web Server"
-      ]
+      "keywords": ["Web Development", "Backend", "Web Server"]
     },
     {
       "name": "Tauri",
       "icon": "simple-icons:tauri",
       "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Rust",
-        "Webview"
-      ]
+      "keywords": ["Desktop App", "Rust", "Webview"]
     },
     {
       "name": "Rust",
       "icon": "simple-icons:rust",
       "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Webview"
-      ]
+      "keywords": ["Desktop App", "Webview"]
     },
     {
       "name": "Socket.IO",
       "icon": "simple-icons:socketdotio",
       "level": "Beginner",
-      "keywords": [
-        "Realtime",
-        "Websocket"
-      ]
+      "keywords": ["Realtime", "Websocket"]
     },
     {
       "name": "Electron",
       "icon": "simple-icons:electron",
       "level": "Beginner",
-      "keywords": [
-        "Desktop App",
-        "Webview"
-      ]
+      "keywords": ["Desktop App", "Webview"]
     },
     {
       "name": "Shell",
       "icon": "simple-icons:shell",
       "level": "Intermediate",
-      "keywords": [
-        "Scripting",
-        "Automation"
-      ]
+      "keywords": ["Scripting", "Automation"]
     },
     {
       "name": "Linux",
       "icon": "simple-icons:linux",
       "level": "Intermediate",
-      "keywords": [
-        "OS",
-        "Scripting",
-        "Automation"
-      ]
+      "keywords": ["OS", "Scripting", "Automation"]
     },
     {
       "name": "Vercel",
       "icon": "simple-icons:vercel",
       "level": "Intermediate",
-      "keywords": [
-        "Serverless",
-        "Static Site Hosting"
-      ]
+      "keywords": ["Serverless", "Static Site Hosting"]
     },
     {
       "name": "Netlify",
       "icon": "simple-icons:netlify",
       "level": "Intermediate",
-      "keywords": [
-        "Serverless",
-        "Static Site Hosting"
-      ]
+      "keywords": ["Serverless", "Static Site Hosting"]
     },
     {
       "name": "Tencent Cloud",
       "icon": "simple-icons:tencentqq",
       "level": "Intermediate",
-      "keywords": [
-        "Cloud Service"
-      ]
+      "keywords": ["Cloud Service"]
     },
     {
       "name": "Cloudflare Edge Functions",
       "icon": "simple-icons:cloudflare",
       "level": "Expert",
-      "keywords": [
-        "Serverless",
-        "Edge Computing"
-      ]
+      "keywords": ["Serverless", "Edge Computing"]
     }
   ],
   "languages": [
@@ -483,10 +351,7 @@
   "interests": [
     {
       "name": "Technology",
-      "keywords": [
-        "AI",
-        "Blockchain"
-      ]
+      "keywords": ["AI", "Blockchain"]
     }
   ],
   "references": [
