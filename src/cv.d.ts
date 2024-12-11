@@ -1,6 +1,7 @@
 export interface CV {
   basics: Basics;
   work: Array<Work>;
+  affiliations: Array<Work>;
   volunteer: Array<Volunteer>;
   education: Array<Education>;
   awards: Array<Awards>;
@@ -34,7 +35,7 @@ interface Location {
 }
 
 interface Profiles {
-  icon: string,
+  icon: string;
   network: string;
   username: string;
   url: string;
@@ -63,7 +64,7 @@ interface Volunteer {
 }
 
 interface Skills {
-  icon: string,
+  icon: string;
   name: string;
   level: string;
   keywords: Array<string>;

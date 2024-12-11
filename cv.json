@@ -7,7 +7,7 @@
     "image": "/avatar.png",
     "email": "jukenohtani@gmail.com",
     "url": "https://www.gcxstudio.cn",
-    "summary": "Born in 2010, I primarily work with TypeScript and JavaScript for full-stack development, and enjoy working with various technologies.",
+    "summary": "Born in 2003, I am a university student currently studying web development and exploring various technologies to enhance my skills.",
     "theme": "red",
     "location": {
       "address": "Chiba",
@@ -61,76 +61,92 @@
       "url": "https://shinonome.com",
       "startDate": "2024-05-01",
       "endDate": null,
-      "summary": "法人向け DX ツール開発に参加し、アルゴリズム設計を担当。",
+      "summary": "法人向け DX ツール開発に参加し、アルゴリズム設計を担当",
       "highlights": [
         "非機械学習アルゴリズムを新規開発。",
         "既存業務プロセスの効率化を実現。"
       ],
-      "responsibilities": ["データ処理および分析用アルゴリズムの設計と実装。"],
+      "responsibilities": ["データ処理および分析用アルゴリズムの設計と実装"],
       "achievements": [
-        "プロジェクト内の主要機能に安定したアルゴリズムを導入。",
-        "非効率なプロセスを分析し、具体的な改善案を提案。"
+        "プロジェクト内の主要機能に安定したアルゴリズムを導入",
+        "非効率なプロセスを分析し、具体的な改善案を提案"
       ],
       "skills": {
         "Python": "mdi:language-python",
+        "Rust": "simple-icons:rust",
         "Git": "mdi:git",
         "GitHub": "mdi:github"
-      }
-    },
-    {
-      "name": "PlayGround",
-      "position": "Full-stack Developer",
-      "location_type": "Remote",
-      "location": "CN",
-      "url": "https://rth2.gcxstudio.cn",
-      "startDate": "2023-01-01",
-      "endDate": "2024-02-11",
-      "summary": "Led page design and account systems.",
-      "highlights": ["Completed 95% of project content."],
-      "responsibilities": [
-        "Developed complete pages.",
-        "Integrated user-facing elements with server-side logic."
-      ],
-      "achievements": ["Ensured smooth project execution."],
-      "skills": {
-        "HTML": "simple-icons:html5",
-        "CSS": "ri:css3-fill",
-        "JavaScript": "simple-icons:javascript",
-        "TypeScript": "simple-icons:typescript",
-        "Vite": "simple-icons:vite",
-        "Node": "ri:nodejs-line",
-        "Docker": "mdi:docker",
-        "WordPress": "ri:wordpress-fill",
-        "Astro": "simple-icons:astro",
-        "SQL": "simple-icons:mysql",
-        "Tailwind": "mdi:tailwind",
-        "React": "mdi:react",
-        "GitHub": "mdi:github",
-        "Git": "mdi:git"
       }
     }
   ],
   "affiliation": [
     {
-      "name": "Example Organization",
-      "position": "Member",
-      "startDate": "2022-04-01",
+      "name": "学生テックコミュニティーPlayGround",
+      "position": "メンバー",
+      "startDate": "2023-05-01",
       "endDate": null,
       "activities": [
-        "Organized monthly community events",
-        "Managed a team of 5 volunteers"
+        "データサイエンスコース修了",
+        "フロントエンドコース受講中",
+        "オフラインイベント運営"
       ],
       "responsibilities": [
-        "Handled event logistics",
-        "Maintained communication channels"
+        "コードレビュアーとして課題の確認とフィードバックを実施",
+        "メンターとして新入生の学習をサポート"
       ],
-      "achievements": ["Increased member engagement by 20%"],
-      "url": "https://example.org",
+      "achievements": [
+        "BBQイベントの企画・運営",
+        "クリスマス会の企画・運営",
+        "内製アプリ開発"
+      ],
+      "url": "https://playground-universe.com/",
       "skills": {
-        "Event Planning": "mdi:calendar",
-        "Communication": "mdi:message"
+        "HTML": "simple-icons:html5",
+        "CSS": "ri:css3-fill",
+        "JavaScript": "simple-icons:javascript",
+        "TypeScript": "simple-icons:typescript",
+        "React": "mdi:react",
+        "Node.js": "ri:nodejs-line",
+        "Next.js": "ri:nextjs-fill",
+        "Astro": "simple-icons:astro",
+        "Python": "simple-icons:python",
+        "Git": "mdi:git",
+        "GitHub": "mdi:github"
       },
       "location": "Tokyo, Japan"
+    },
+    {
+      "name": "理科大プログラミングサークルTND",
+      "position": "主宰",
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "activities": ["サークル立ち上げ"],
+      "responsibilities": ["サークルの運営全般"],
+      "achievements": [
+        "新入生歓迎会の企画・運営",
+        "初年度からメンバー20名達成",
+        "内製アプリ開発"
+      ],
+      "url": "https://x.com/TokyorikaND",
+      "skills": {
+        "HTML": "simple-icons:html5",
+        "CSS": "ri:css3-fill",
+        "JavaScript": "simple-icons:javascript",
+        "TypeScript": "simple-icons:typescript",
+        "React": "mdi:react",
+        "Node.js": "ri:nodejs-line",
+        "Next.js": "ri:nextjs-fill",
+        "Astro": "simple-icons:astro",
+        "Python": "simple-icons:python",
+        "Git": "mdi:git",
+        "GitHub": "mdi:github",
+        "Rust": "simple-icons:rust",
+        "React Native": "mdi:react",
+        "Go": "simple-icons:go",
+        "Discord": "mdi:discord",
+        "Google Apps Script": "mdi:google"
+      },
+      "location": "Noda, Chiba, Japan"
     }
   ],
 
@@ -362,38 +378,42 @@
   ],
   "projects": [
     {
-      "name": "Cloudflare Vmail",
+      "name": "Deloitte×PlayGround 防災ハッカソン 2023 グランプリ",
       "image": {
-        "url": "https://i0.hdslb.com/bfs/article/985e2caa8266dee4b9861ee6a341886d480025691.png@1e_1c.webp",
-        "position": "container",
-        "dark": "https://i0.hdslb.com/bfs/article/4d0bf8a784d22e54e3e61763c361c9ef480025691.png@100q_1e_1c.webp"
+        "url": "/public/mamorukun.webp",
+        "position": "container"
       },
       "isActive": true,
-      "description": "An open source temporary email tool, fully on Cloudflare. Inspired by oiov/vmail",
+      "description": "自治体の防災課題を解決するプロダクトを作るハッカソン",
       "highlights": [
-        "🎯 Privacy-friendly, no registration required, out-of-the-box",
-        "✨ Support saving passwords and retrieving email addresses",
-        "😄 Support multiple domain name suffixes",
-        "🚀 100% open source, fully based on Cloudflare."
+        "6週間のハッカソン期間中、チームでの開発を行い、最終的にグランプリを受賞",
+        "リーンスタートアップ手法を用いた開発"
       ],
-      "url": "https://what-the-fuck.sbs",
-      "github": "https://github.com/MiraHikari/cloudflare-vmail"
+      "url": "https://playground-universe.com/nwFkz1q_/BosaiHackathon"
     },
     {
-      "name": "Riddle Town Hunt 2",
+      "name": "【初心者必見】“Python書けます！”と自信を持って言えるようになろう",
       "image": {
-        "url": "https://rth2-webstatic.gbclstudio.cn/wp-content/uploads/2024/02/1707656250-76b2b0d2c94824e89a2b8b2c7d1c6afe.png",
-        "position": "background"
+        "url": "https://blog.shinonome.io/content/images/size/w1200/2024/11/26ff1ff0-4674-48e4-b986-3e359712ed50.webp",
+        "position": "container"
       },
-      "isActive": false,
-      "description": "Public decryption activity in the form of Puzzle Hunt.",
+      "isActive": true,
+      "description": "テックブログ",
+      "highlights": ["Pythonの基本的な文法を解説"],
+      "url": "https://blog.shinonome.io/python-basics-confidence/"
+    },
+    {
+      "name": "化学実験で使える検量線アプリをPythonで手軽に開発する方法",
+      "image": {
+        "url": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F3686753%2Fe2a057de-318a-db6d-0cf6-06a950aeca3b.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=6d7fc0fae0eded9ac5f71e713c4d76ff",
+        "position": "container"
+      },
+      "isActive": true,
+      "description": "テックブログ",
       "highlights": [
-        "👌 More than 1000 people participated, system runs normally",
-        "😮‍ Use headless CMS: WordPress to storage and manage contents, dynamically render page",
-        "😊 Windows-like interface",
-        "💕 Based on Astro"
+        "PythonのmatplotlibとStreamlitを組み合わせて、グラフアプリを作った話"
       ],
-      "url": "https://rth2.gcxstudio.cn/"
+      "url": "https://qiita.com/rya_ryo12357/items/63a5d07f1157eff1e12f"
     }
   ]
 }

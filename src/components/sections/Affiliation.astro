@@ -1,134 +1,121 @@
 ---
-import Section from "../Section.astro";
-import { affiliation } from "@cv"; // 所属データを管理
-import { Icon } from "astro-icon/components";
+import Section from '../Section.astro'
+import { affiliation } from '@cv'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Section className={Astro.props.className} title="Affiliation">
   <ul class="flex flex-col">
-    {
-      affiliation.map(
-        ({
-          name,
-          position,
-          startDate,
-          endDate,
-          activities,
-          responsibilities,
-          achievements,
-          url,
-          skills,
-          location,
-        }) => {
-          const startYear = new Date(startDate).getFullYear();
-          const endYear =
-            endDate != null ? new Date(endDate).getFullYear() : "Present";
+    {affiliation.map(({ name, startDate, endDate, position, activities, responsibilities, achievements, url, skills, location, location_type }) => {
+      const startYear = new Date(startDate).getFullYear()
+      const endYear = endDate != null ? new Date(endDate).getFullYear() : "Present"
 
-          return (
-            <li class="relative print:py-2">
-              <div
-                data-expanded="false"
-                class="expand-container group relative grid pb-1 transition-all sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 print:grid-cols-1 print:gap-1 print:pb-0"
-              >
-                <header class="relative mt-1 text-xs font-semibold sm:col-span-2">
-                  <time datetime={startDate} data-title={startDate}>
-                    {startYear}
-                  </time>{" "}
-                  -{" "}
-                  <time datetime={endDate} data-title={endDate}>
-                    {endYear}
-                  </time>
-                </header>
-                <div class="relative flex flex-col pb-6 before:absolute before:-ml-6 before:mt-2 before:h-full before:w-px before:bg-skin-muted sm:col-span-10 print:pb-0 print:before:hidden">
-                  <div class="absolute mt-2 h-2 w-2 -translate-x-[1.71rem] rounded-full bg-skin-muted ring ring-skin-fill print:hidden" />
-                  <h3>
-                    <div
-                      class="group/link inline-flex items-center text-lg leading-tight focus-visible:text-amber-500 print:text-base"
-                      aria-label="{position} - {affiliation}"
-                    >
-                      <span>
-                        {position} <span>@</span>
-                        {url ? (
-                          <a
-                            class="text-skin-hue"
-                            href={url}
-                            title={`Visit ${name}`}
-                            target="_blank"
-                          >
-                            {name}
-                          </a>
-                        ) : (
-                          <span>{name}</span>
-                        )}
-                        {url && (
-                          <span class="inline-block text-skin-hue print:[&>svg]:hidden">
-                            <Icon
-                              name="ri:arrow-up-line"
-                              class="ml-1 inline-block h-4 w-4 shrink-0 translate-y-px rotate-45 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none"
-                              aria-hidden="true"
-                            ></Icon>
-                          </span>
-                        )}
-                      </span>
-                    </div>
-                  </h3>
-                  {location && (
-                    <div class="text-xs text-skin-muted">{location}</div>
+      return (
+        <li class="relative print:py-2">
+          <div data-expand2ed="false" class="group relative grid pb-1 print:pb-0 transition-all print:grid-cols-1 print:gap-1 sm:grid-cols-12 sm:gap-8 md:gap-6 lg:hover:!opacity-100 expand2-container">
+            <header class="relative mt-1 text-xs font-semibold sm:col-span-2">
+              <time datetime={startDate} data-title={startDate}>{startYear}</time> - <time datetime={endDate} data-title={endDate}>{endYear}</time>
+            </header>
+            <div class="relative flex flex-col pb-6 print:pb-0 before:-ml-6 sm:col-span-10 before:w-px print:before:hidden before:absolute before:bg-skin-muted before:h-full before:mt-2">
+            <div class="absolute w-2 h-2 bg-skin-muted rounded-full mt-2 -translate-x-[1.71rem] ring print:hidden ring-skin-fill"></div>
+              <h3>
+                <div class="inline-flex items-center text-lg print:text-base leading-tight group/link focus-visible:text-amber-500" aria-label="{position} - {company}">
+                  <span>{position} <span>@</span>
+                  {url ? (
+                    <a class="text-skin-hue" href={url} title={`Ver ${name}`} target="_blank">{name}</a>
+                  ) : (
+                    <span>{name}</span>
                   )}
-                  <div class="mt-4 flex flex-col gap-4 text-sm print:gap-0 print:text-xs">
-                    {activities && (
-                      <div class="flex flex-col gap-1">
-                        <h4>Activities:</h4>
-                        <ul class="flex list-disc flex-col gap-2 text-skin-muted [&>li]:ml-4">
-                          {activities.map((activity) => (
-                            <li>{activity}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                    {(responsibilities || achievements) && (
-                      <div class="flex flex-col gap-4 print:gap-2">
-                        {responsibilities && (
-                          <div class="flex flex-col gap-1">
-                            <h4>Responsibilities:</h4>
-                            <ul class="flex list-disc flex-col gap-2 text-skin-muted [&>li]:ml-4">
-                              {responsibilities.map((responsibility) => (
-                                <li>{responsibility}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                        {achievements && (
-                          <div class="flex flex-col gap-1">
-                            <h4>Achievements:</h4>
-                            <ul class="flex list-disc flex-col gap-2 text-skin-muted [&>li]:ml-4">
-                              {achievements.map((achievement) => (
-                                <li>{achievement}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  <ul
-                    class="flex flex-wrap gap-2 print:hidden"
-                    aria-label="Technologies used"
-                  >
-                    {skills &&
-                      Object.entries(skills).map(([label, icon]) => (
-                        <li class="flex items-center gap-1 rounded-md border border-solid border-skin-hue/20 bg-skin-button-accent/20 px-2 py-0.5 text-xs text-skin-hue backdrop-blur-sm print:border-none print:bg-transparent print:p-0 print:text-zinc-800">
-                          {icon && <Icon name={icon} width={16} height={16} />}{" "}
-                          <span>{label}</span>
-                        </li>
-                      ))}
-                  </ul>
+                  {url &&
+                    <span class="inline-block text-skin-hue print:[&>svg]:hidden">
+                      <Icon name="ri:arrow-up-line" class="inline-block w-4 h-4 ml-1 transition-transform translate-y-px shrink-0 group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none rotate-45" aria-hidden="true">
+                      </Icon>
+                    </span>
+                  }
+                  </span>
                 </div>
+              </h3>
+              {(location || location_type) && (
+                <div class="text-xs text-skin-muted">
+                  {location} {location && location_type && '-'} {location_type}
+                </div>
+              )}
+              <div class="mt-4  print:gap-0 flex flex-col gap-4 print:text-xs text-sm">
+                {activities && (
+                  <div class="flex flex-col gap-1">
+                    <h4>Activities:</h4>
+                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                      {activities.map(item => (
+                        <li>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {(responsibilities || achievements) &&  (
+                <div class="after:from-skin-hue dark:after:to-skin-hue/0 flex relative flex-col print:!h-auto gap-4 print:gap-2 after:bg-gradient-to-t after:absolute after:bottom-0 after:w-full print:after:hidden after:h-12 after:content-[''] h-16 group-data-[expand2ed=true]:after:hidden group-data-[expand2ed=true]:h-auto overflow-hidden duration-200 ease-out">
+                {responsibilities && (
+                  <div class="flex flex-col gap-1">
+                    <h4>Responsibilities:</h4>
+                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                      {responsibilities.map(responsibility => (
+                        <li>{responsibility}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {achievements && (
+                  <div class="flex flex-col gap-1">
+                    <h4>Achievements:</h4>
+                    <ul class="text-skin-muted [&>li]:ml-4 flex list-disc flex-col gap-2">
+                      {achievements.map(achievement => (
+                        <li>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                </div>
+
+                <button class="print:hidden group/more w-fit cursor-pointer items-center justify-center gap-1.5 text-xs underline text-skin-muted transition-all hover:text-skin-base flex expand2-button">
+                  <span class="expand2-text">Show more</span>
+                  <Icon name="ri:arrow-up-s-line" class="w-4 h-4 group-hover/more:translate-y-0.5 duration-200 ease-out group-data-[expand2ed=true]:rotate-180" width={24} height={24}></Icon>
+                </button>
+
+
+                <ul class="flex print:hidden flex-wrap gap-2" aria-label="Technologies used">
+                  {skills && Object.entries(skills).map(([label, icon]) =>  (
+                      <li class="bg-skin-button-accent/20 border-skin-hue/20 text-skin-hue print:p-0 print:bg-transparent print:text-zinc-800 flex gap-1 items-center border-solid print:border-none border rounded-md px-2 py-0.5 text-xs backdrop-blur-sm">
+                        {icon && <Icon name={icon} width={16} height={16} />} <span>{label}</span>
+                      </li>
+                    )
+                  )
+                  }
+                </ul>
+)}
               </div>
-            </li>
-          );
-        },
+            </div>
+        </div>
+        </li>
       )
-    }
+    })}
   </ul>
 </Section>
+<script>
+  const expand2Button = document.querySelectorAll('.expand2-button');
+
+  expand2Button.forEach(button => {
+    button.addEventListener('click', () => {
+      const container = button.closest<HTMLElement>('.expand2-container')!;
+      container.dataset.expand2ed = container.dataset.expand2ed === 'true' ? 'false' : 'true';
+      const expand2Text = button.querySelector('.expand2-text')!;
+      expand2Text.innerHTML = container.dataset.expand2ed === 'true' ? 'Show less' : 'Show more'
+    });
+  });
+</script>
+
+<style>
+  li::marker {
+    @apply text-skin-hue
+  }
+</style>
