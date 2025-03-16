@@ -50,6 +50,12 @@
       "date": "2024-03-11",
       "url": "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/SjR6UlNTandId0tiU24zR0YvQjRjUT09",
       "issuer": "東京理科大学"
+    },
+    {
+      "name": "Data Science Education Program Level 2 (Advanced Literacy)",
+      "date": "2025-03-12",
+      "url": "https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/TThMZ2orQUFvYjkrVlRKV1hEVEFYUT09",
+      "issuer": "東京理科大学"
     }
   ],
   "work": [
@@ -306,7 +312,7 @@
         "position": "container"
       },
       "isActive": true,
-      "description": "テックブログ",
+      "description": "Shinonome テックブログ",
       "highlights": ["Pythonの基本的な文法を解説"],
       "url": "https://blog.shinonome.io/python-basics-confidence/"
     },
@@ -317,11 +323,22 @@
         "position": "container"
       },
       "isActive": true,
-      "description": "テックブログ",
+      "description": "Qiitaアドベントカレンダーでいいね賞受賞",
       "highlights": [
         "PythonのmatplotlibとStreamlitを組み合わせて、グラフアプリを作った話"
       ],
       "url": "https://qiita.com/rya_ryo12357/items/63a5d07f1157eff1e12f"
+    },
+    {
+      "name": "Pixel純正ターミナルでPython環境を構築してみた",
+      "image": {
+        "url": "https://helentech.jp/wp-content/uploads/2025/03/Google-Pixel-Android-Linux-Terminal-appGoogle-Pixel-Android-Linux-Terminal-app2.webp",
+        "position": "container"
+      },
+      "isActive": true,
+      "description": "Qiitaテックブログ",
+      "highlights": ["50,000 Views突破"],
+      "url": "https://qiita.com/rya_ryo12357/items/ee8479a92d4a1bfb36f3"
     }
   ]
 }

@@ -116,7 +116,20 @@ import { Image } from "astro:assets";
       )
     }
   </div>
+  
+  <div class="mt-8 flex justify-center">
+    <a
+      href="/blog"
+      class="group inline-flex items-center gap-2 rounded-md bg-skin-button-muted/50 px-6 py-3 text-skin-base transition-colors hover:bg-skin-button-muted"
+    >
+      Read More
+      <span class="text-skin-hue transition ease-linear group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+        <Icon name="ri:arrow-up-line" class="rotate-45" />
+      </span>
+    </a>
+  </div>
 </Section>
+
 <script>
   import { Fancybox } from "@fancyapps/ui";
   Fancybox.bind('[data-fancybox="projects"]', { hideScrollbar: false });

@@ -19,8 +19,13 @@ export default defineConfig({
       CSS: false,
       Image: false,
       Action: {
-        Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
+        Passed: async () => true,
       },
     }),
   ],
+  // コンテンツコレクションのための設定
+  content: {
+    // コンテンツのソースディレクトリを指定
+    sources: ['./src/content']
+  }
 });

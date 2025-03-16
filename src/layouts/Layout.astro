@@ -1,5 +1,6 @@
 ---
 import ArtPlums from "@/components/ArtPlums.astro";
+// import Navigation from "@/components/Navigation.astro";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import '../globals.css'
 import CV from "@cv";
@@ -11,6 +12,9 @@ interface Props {
 const { title } = Astro.props;
 
 const { image, summary, url, theme } = CV.basics;
+
+const pathname = new URL(Astro.request.url).pathname;
+const isActive = (path: string) => pathname === path;
 ---
 
 <!doctype html>
@@ -37,14 +41,17 @@ const { image, summary, url, theme } = CV.basics;
     {CV?.analyticsCode && <script is:inline src={CV.analyticsCode} />}
   </head>
   <body data-theme={theme} class="relative bg-skin-fill font-sans">
-    <div class="absolute top-0 -z-10 h-full w-full print:hidden">
-      <div
-        class="absolute bottom-auto left-[20%] right-auto top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full bg-skin-hue/10 blur-[80px] invert-0 dark:bg-white/5"
-      >
+    <!-- <Navigation /> -->
+    <div class="pt-12"> <!-- Added padding to prevent content from being hidden under navigation -->
+      <div class="absolute top-0 -z-10 h-full w-full print:hidden">
+        <div
+          class="absolute bottom-auto left-[20%] right-auto top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full bg-skin-hue/10 blur-[80px] invert-0 dark:bg-white/5"
+        >
+        </div>
       </div>
+      <ArtPlums />
+      <slot />
     </div>
-    <ArtPlums />
-    <slot />
     <style>
       body,
       figure {
