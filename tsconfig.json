@@ -9,6 +9,7 @@
       "@/*": [
         "src/*"
       ]
-    }
+    },
+    "types": ["astro/client"]
   }
 }
