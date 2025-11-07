@@ -7,7 +7,7 @@ A modern, customizable portfolio website built with Astro, React, and shadcn/ui 
 ## ✨ Features
 
 - 🎨 Modern UI with shadcn/ui components
-- 🌓 Multiple theme support (Orange, Blue, Red, Green, Cyber, Pink)
+- 🎨 7 customizable color themes with live switching (Orange, Blue, Red, Green, Purple, Cyber, Pink)
 - 📱 Fully responsive design
 - 🎭 Smooth animations
 - 🖨️ Print-friendly layout
@@ -78,16 +78,35 @@ The main content sections are defined in `src/pages/index.astro`:
 
 ### Themes
 
-Change the `theme` property in the `basics` object to one of:
+You can switch between 7 built-in color themes using the theme selector button in the top-right corner of the page:
 
-- `Orange` (default)
-- `Blue`
-- `Red`
-- `Green`
-- `Cyber`
-- `Pink`
+- 🟠 **Orange** (default) - Warm and energetic
+- 🔵 **Blue** - Professional and calm
+- 🔴 **Red** - Bold and passionate
+- 🟢 **Green** - Fresh and natural
+- 🟣 **Purple** - Creative and elegant
+- 🔷 **Cyber** - Futuristic and modern
+- 🩷 **Pink** - Soft and friendly
 
-Custom themes can be added by extending the CSS variables in `src/globals.css`.
+The selected theme is automatically saved in localStorage and persists across sessions.
+
+#### Adding Custom Themes
+
+Custom themes can be added by:
+
+1. Adding theme colors to `src/globals.css`:
+```css
+[data-theme="your-theme"] {
+  --color-text-base: R, G, B;
+  --color: R, G, B;
+  /* ... other color variables */
+}
+```
+
+2. Adding the theme option to `src/components/ThemeSelector.tsx`:
+```typescript
+{ name: "Your Theme", value: "your-theme", color: "bg-color-class" }
+```
 
 ## 🧞 Commands
 
@@ -125,10 +144,11 @@ portfolio-site/
 
 ## 🎨 Component Library
 
-This project uses shadcn/ui components adapted for Astro:
+This project uses shadcn/ui and custom components:
 
 - **Card** - Container component with header, content, and footer
 - **Badge** - Small status indicators and tags
+- **ThemeSelector** - Color theme switcher with 7 built-in themes
 - More components can be added as needed
 
 ## 📄 License
