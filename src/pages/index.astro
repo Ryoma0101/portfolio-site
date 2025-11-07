@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
+import ThemeSelector from "@/components/ThemeSelector";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
@@ -368,6 +369,11 @@ const projects = [
   theme={basics.theme}
 >
   <main class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <!-- Theme Selector -->
+    <div class="mb-8 flex justify-end">
+      <ThemeSelector client:load />
+    </div>
+
     <!-- Hero Section -->
     <section class="mb-16">
       <div

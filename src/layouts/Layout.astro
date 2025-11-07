@@ -34,6 +34,13 @@ const {
     <meta name="twitter:description" content={description} />
   </head>
   <body data-theme={theme} class="relative bg-skin-fill font-sans">
+    <script is:inline>
+      // Load theme immediately to prevent flash
+      (function () {
+        const savedTheme = localStorage.getItem("portfolio-theme") || "Orange";
+        document.body.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
     <div class="pt-12">
       <div class="absolute top-0 -z-10 h-full w-full print:hidden">
         <div

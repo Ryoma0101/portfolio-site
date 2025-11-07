@@ -99,6 +99,23 @@
       /* Material Design Pink 700 */
       --color-button-muted: 255, 240, 245;
     }
+
+    [data-theme="purple"] {
+      --color-text-base: 40, 40, 40;
+      --color-text-muted: 110, 110, 110;
+      --color-text-inverted: 245, 240, 255;
+      --color-fill: 237, 233, 254;
+      /* Purple 50 */
+      --color-muted: 196, 181, 253;
+      /* Purple 200 */
+      --color: 147, 51, 234;
+      /* Purple 600 */
+      --color-button-accent: 147, 51, 234;
+      /* Purple 600 */
+      --color-button-accent-hover: 126, 34, 206;
+      /* Purple 700 */
+      --color-button-muted: 243, 232, 255;
+    }
   }
 
   .dark {
@@ -190,6 +207,21 @@
       --color-button-accent: 255, 105, 180;
       --color-button-accent-hover: 255, 182, 193;
       --color-button-muted: 255, 240, 245;
+    }
+
+    [data-theme="purple"] {
+      --color-text-base: 245, 240, 255;
+      --color-text-muted: 196, 181, 253;
+      --color-text-inverted: 40, 40, 40;
+      --color-fill: 30, 27, 75;
+      --color-muted: 88, 80, 141;
+      --color: 196, 181, 253;
+      /* Purple 300 */
+      --color-button-accent: 196, 181, 253;
+      /* Purple 300 */
+      --color-button-accent-hover: 167, 139, 250;
+      /* Purple 400 */
+      --color-button-muted: 88, 80, 141;
     }
   }
 }
