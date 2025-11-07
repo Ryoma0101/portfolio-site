@@ -3,11 +3,15 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import astroIcon from "astro-icon";
 import playformCompress from "@playform/compress";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    tailwind(),
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     astroIcon({
       include: {
         mdi: ["*"],
@@ -23,9 +27,4 @@ export default defineConfig({
       },
     }),
   ],
-  // コンテンツコレクションのための設定
-  content: {
-    // コンテンツのソースディレクトリを指定
-    sources: ['./src/content']
-  }
 });

@@ -1,12 +1,35 @@
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+
     --color-text-base: 0, 0, 0;
     --color-text-muted: 120, 120, 120;
     --color-text-inverted: 255, 255, 255;
     --color-fill: 245, 245, 245;
-    --muted: 200, 200, 200;
+    --color-muted: 200, 200, 200;
     --color: 249, 115, 22;
     --color-button-accent: 249, 115, 22;
     --color-button-accent-hover: 55, 55, 55;
@@ -17,7 +40,7 @@
       --color-text-muted: 100, 116, 139;
       --color-text-inverted: 240, 240, 240;
       --color-fill: 203, 213, 225;
-      --muted: 148, 163, 184;
+      --color-muted: 148, 163, 184;
       --color: 59, 130, 246;
       --color-button-accent: 59, 130, 246;
       --color-button-accent-hover: 0, 185, 255;
@@ -29,7 +52,7 @@
       --color-text-muted: 100, 100, 100;
       --color-text-inverted: 245, 245, 245;
       --color-fill: 231, 229, 228;
-      --muted: 220, 220, 220;
+      --color-muted: 220, 220, 220;
       --color: 239, 68, 68;
       --color-button-accent: 239, 68, 68;
       --color-button-accent-hover: 220, 50, 70;
@@ -41,7 +64,7 @@
       --color-text-muted: 110, 110, 110;
       --color-text-inverted: 230, 230, 230;
       --color-fill: 236, 252, 203;
-      --muted: 189, 220, 147;
+      --color-muted: 189, 220, 147;
       --color: 101, 163, 13;
       --color-button-accent: 101, 163, 13;
       --color-button-accent-hover: 120, 220, 120;
@@ -53,7 +76,7 @@
       --color-text-muted: 144, 135, 5;
       --color-text-inverted: 240, 240, 240;
       --color-fill: 252, 255, 64;
-      --muted: 50, 50, 50;
+      --color-muted: 50, 50, 50;
       --color: 235, 21, 43;
       --color-button-accent: 235, 21, 43;
       --color-button-accent-hover: 0, 185, 255;
@@ -66,7 +89,7 @@
       --color-text-inverted: 255, 240, 245;
       --color-fill: 248, 187, 208;
       /* Material Design Pink 100 */
-      --muted: 244, 143, 177;
+      --color-muted: 244, 143, 177;
       /* Material Design Pink 200 */
       --color: 233, 30, 99;
       /* Material Design Pink 500 */
@@ -79,11 +102,31 @@
   }
 
   .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+
     --color-text-base: 255, 255, 255;
     --color-text-muted: 150, 150, 150;
     --color-text-inverted: 255, 255, 255;
     --color-fill: 18, 18, 18;
-    --muted: 36, 36, 36;
+    --color-muted: 36, 36, 36;
     --color: 227, 77, 10;
     --color-button-accent: 227, 77, 10;
     --color-button-accent-hover: 231, 121, 43;
@@ -94,7 +137,7 @@
       --color-text-muted: 148, 163, 184;
       --color-text-inverted: 240, 240, 240;
       --color-fill: 2, 6, 23;
-      --muted: 51, 65, 85;
+      --color-muted: 51, 65, 85;
       --color: 59, 130, 246;
       --color-button-accent: 59, 130, 246;
       --color-button-accent-hover: 0, 185, 255;
@@ -106,7 +149,7 @@
       --color-text-muted: 168, 162, 158;
       --color-text-inverted: 245, 245, 245;
       --color-fill: 28, 25, 23;
-      --muted: 45, 45, 45;
+      --color-muted: 45, 45, 45;
       --color: 248, 113, 113;
       --color-button-accent: 248, 113, 113;
       --color-button-accent-hover: 220, 50, 70;
@@ -118,7 +161,7 @@
       --color-text-muted: 104, 124, 104;
       --color-text-inverted: 230, 230, 230;
       --color-fill: 10, 20, 10;
-      --muted: 54, 64, 54;
+      --color-muted: 54, 64, 54;
       --color: 132, 204, 22;
       --color-button-accent: 132, 204, 22;
       --color-button-accent-hover: 120, 220, 120;
@@ -130,7 +173,7 @@
       --color-text-muted: 125, 125, 125;
       --color-text-inverted: 240, 240, 240;
       --color-fill: 15, 15, 15;
-      --muted: 50, 50, 50;
+      --color-muted: 50, 50, 50;
       --color: 90, 237, 251;
       --color-button-accent: 90, 237, 251;
       --color-button-accent-hover: 0, 185, 255;
@@ -142,7 +185,7 @@
       --color-text-muted: 255, 182, 193;
       --color-text-inverted: 40, 40, 40;
       --color-fill: 40, 40, 40;
-      --muted: 110, 110, 110;
+      --color-muted: 110, 110, 110;
       --color: 255, 105, 180;
       --color-button-accent: 255, 105, 180;
       --color-button-accent-hover: 255, 182, 193;
