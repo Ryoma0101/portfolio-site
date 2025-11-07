@@ -5,7 +5,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
-      "@cv": ["./cv.json"],
       "@/*": ["src/*"]
     },
     "types": ["astro/client"]
