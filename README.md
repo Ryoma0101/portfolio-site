@@ -1,76 +1,172 @@
-## Print-friendly portfolio CV
+# Portfolio Site
 
-![preview](https://github.com/user-attachments/assets/44c47034-06e4-412a-b9dd-014593b32215)
+A modern, customizable portfolio website built with Astro, React, and shadcn/ui components.
 
-## 📄 About
+![Portfolio Preview](https://github.com/user-attachments/assets/44c47034-06e4-412a-b9dd-014593b32215)
 
-This project is refactored from the original [**dev-portfolio**](https://github.com/Smilesharks/dev-portfolio) project, thanks for his work.
+## ✨ Features
 
-I use iconify instead of SVG icons for better dev experience.
+- 🎨 Modern UI with shadcn/ui components
+- 🎨 7 customizable color themes with live switching (Orange, Blue, Red, Green, Purple, Cyber, Pink)
+- 📱 Fully responsive design
+- 🎭 Smooth animations
+- 🖨️ Print-friendly layout
+- ⚡ Built with Astro for optimal performance
+- 🎯 TypeScript support
+- 🎨 Tailwind CSS for styling
 
-Thanks for antfu's cool animations.
+## 🛠️ Tech Stack
 
-## 🛠️ Stack
-
-- [**Astro**](https://astro.build/) - The next-gen web framework.
-- [**Typescript**](https://www.typescriptlang.org/) - JavaScript with type syntax.
-- [**TailwindCSS**](https://tailwindcss.com/) - Utility-first CSS framework.
-- [**Iconify**](https://iconify.design/) - Icon library.
-- [**FancyBox**](https://fancyapps.com/fancybox/3/) - Image viewer.
-- [**Ninja Keys**](https://github.com/ssleptsov/ninja-keys) - Dropdown menu with keyboard shortcuts made in pure JavaScript.
+- [**Astro**](https://astro.build/) - Modern web framework
+- [**React**](https://react.dev/) - UI component library
+- [**TypeScript**](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [**Tailwind CSS**](https://tailwindcss.com/) - Utility-first CSS framework
+- [**shadcn/ui**](https://ui.shadcn.com/) - Re-usable component library
+- [**Iconify**](https://iconify.design/) - Universal icon framework
+- [**FancyBox**](https://fancyapps.com/fancybox/) - Lightbox library
 
 ## 🚀 Getting Started
 
-### 0. One-click to deploy on Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/MiraHikari/portfolio&project-name=portfolio&repository-name=portfolio)
+### Prerequisites
 
-Modify the `cv.json` file to create your own printable Portfolio/CV.
+- Node.js 18+
+- pnpm (recommended) or npm
 
-### 1. Use this Repo as an Astro Project Template
-
-- I use [pnpm](https://pnpm.io/installation) as my package manager.
-
-# Initialize the project
-```bash
-pnpm create astro@latest --template MiraHikari/portfolio
-```
-
-### 1-1. Clone the repo
-If you don't want to use the template command, you can clone this repo and install the dependencies.
+### Installation
 
 ```bash
-git clone https://github.com/MiraHikari/portfolio.git
-cd portfolio
+# Clone the repository
+git clone https://github.com/Ryoma0101/portfolio-site.git
+cd portfolio-site
+
+# Install dependencies
 pnpm install
-```
 
-### 2. Add Your Content:
-
-Edit the `cv.json` file to create your own printable Portfolio/CV.
-
-### 3. Launch the Development Server:
-
-```bash
-# Enjoy the results
+# Start development server
 pnpm dev
 ```
-1. Open [**http://localhost:4321**](http://localhost:4321/) in your browser to view the result 🚀
 
-### 4. Customisable colours:
-Change the data-theme of `cv.json` and choose one of the colour themes defined in theme.css, red, blue, green, cyber, pink and default, with its variants in dark mode, or create your own.
+Open [http://localhost:4321](http://localhost:4321) in your browser.
+
+## 📝 Customization
+
+### Personal Information
+
+Edit the data directly in `src/pages/index.astro`:
+
+```typescript
+const basics = {
+  name: "Your Name",
+  email: "your.email@example.com",
+  summary: "Your bio...",
+  theme: "Orange", // or "Blue", "Red", "Green", "Cyber", "Pink"
+  // ... more fields
+};
+```
+
+### Sections
+
+The main content sections are defined in `src/pages/index.astro`:
+
+- **basics** - Personal information and contact details
+- **education** - Educational background
+- **certificates** - Certifications and awards
+- **work** - Work experience
+- **affiliation** - Community involvement and activities
+- **skills** - Technical skills and proficiencies
+- **projects** - Portfolio projects
+
+### Themes
+
+You can switch between 7 built-in color themes using the theme selector button in the top-right corner of the page:
+
+- 🟠 **Orange** (default) - Warm and energetic
+- 🔵 **Blue** - Professional and calm
+- 🔴 **Red** - Bold and passionate
+- 🟢 **Green** - Fresh and natural
+- 🟣 **Purple** - Creative and elegant
+- 🔷 **Cyber** - Futuristic and modern
+- 🩷 **Pink** - Soft and friendly
+
+The selected theme is automatically saved in localStorage and persists across sessions.
+
+#### Adding Custom Themes
+
+Custom themes can be added by:
+
+1. Adding theme colors to `src/globals.css`:
+```css
+[data-theme="your-theme"] {
+  --color-text-base: R, G, B;
+  --color: R, G, B;
+  /* ... other color variables */
+}
+```
+
+2. Adding the theme option to `src/components/ThemeSelector.tsx`:
+```typescript
+{ name: "Your Theme", value: "your-theme", color: "bg-color-class" }
+```
 
 ## 🧞 Commands
 
-|     | Command         | Action                                                                       |
-| :-- | :-------------- | :--------------------------------------------------------------------------- |
-| ⚙️  | `dev` or `start` | Launches a local development server at `localhost:4321`.                   |
-| ⚙️  | `build`         | Checks for errors and creates a production build in `./dist/`. |
-| ⚙️  | `preview`       | Local preview at `localhost:4321`                                       |
-| 📦  | `deploy:vercel`         | Deploy on Vercel.                           |
-| 📦 | `deploy:cloudflare`       | Deploy on Cloudflare, please run `wrangler login` first.                                           |                                |
+| Command                  | Action                                       |
+| ------------------------ | -------------------------------------------- |
+| `pnpm dev`               | Start development server at `localhost:4321` |
+| `pnpm build`             | Build production site to `./dist/`           |
+| `pnpm preview`           | Preview production build locally             |
+| `pnpm deploy:vercel`     | Deploy to Vercel                             |
+| `pnpm deploy:cloudflare` | Deploy to Cloudflare Pages                   |
 
-## 📝 License
+## 📦 Project Structure
+
+```
+portfolio-site/
+├── public/              # Static assets
+│   └── avatar.png      # Profile image
+├── src/
+│   ├── components/
+│   │   ├── ui/         # shadcn/ui components
+│   │   │   ├── Card.tsx
+│   │   │   └── Badge.tsx
+│   │   └── ArtPlums.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── lib/
+│   │   └── utils.ts    # Utility functions
+│   ├── pages/
+│   │   └── index.astro # Main portfolio page
+│   └── globals.css     # Global styles & theme variables
+├── astro.config.mjs
+├── tailwind.config.mjs
+└── tsconfig.json
+```
+
+## 🎨 Component Library
+
+This project uses shadcn/ui and custom components:
+
+- **Card** - Container component with header, content, and footer
+- **Badge** - Small status indicators and tags
+- **ThemeSelector** - Color theme switcher with 7 built-in themes
+- More components can be added as needed
+
+## 📄 License
 
 This project is [MIT](./LICENSE) licensed.
 
-CV JSON schema from [**jsonresume.org**](https://jsonresume.org/schema/)
+## 🙏 Acknowledgments
+
+- Original design inspiration from [dev-portfolio](https://github.com/Smilesharks/dev-portfolio)
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Icons from [Iconify](https://iconify.design/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+## 📧 Contact
+
+Ryoma Ohtani - [@d7zPa0NDyA59529](https://x.com/d7zPa0NDyA59529)
+
+Project Link: [https://github.com/Ryoma0101/portfolio-site](https://github.com/Ryoma0101/portfolio-site)

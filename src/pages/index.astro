@@ -1,181 +1,763 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/Card";
+import { Badge } from "@/components/ui/Badge";
+import ThemeSelector from "@/components/ThemeSelector";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
-import About from "@/components/sections/About.astro";
-import Affiliation from "@/components/sections/Affiliation.astro";
-import Experience from "@/components/sections/Experience.astro";
-import Hero from "@/components/sections/Hero.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import Tail from "@/components/sections/Tail.astro";
-import ThemeSwitch from "@/components/ThemeSwitch.astro";
+// Data directly embedded in the file
+const basics = {
+  name: "Ryoma Ohtani",
+  label: "",
+  image: "/avatar.png",
+  email: "jukenohtani@gmail.com",
+  url: "https://www.gcxstudio.cn",
+  summary:
+    "Born in 2003, I am a university student currently studying web development and exploring various technologies to enhance my skills.",
+  theme: "Orange",
+  location: {
+    address: "Chiba",
+    city: "Kashiwa",
+    countryCode: "81",
+    region: "Japan",
+  },
+  profiles: [
+    {
+      network: "X",
+      icon: "ri:twitter-x-line",
+      username: "Ryo",
+      url: "https://x.com/d7zPa0NDyA59529",
+    },
+    {
+      network: "GitHub",
+      icon: "mdi:github",
+      username: "Ryoma0101",
+      url: "https://github.com/Ryoma0101",
+    },
+  ],
+};
 
-import CV, { basics } from "@cv";
-import Education from "@/components/sections/Education.astro";
-import Images from "@/components/sections/Images.astro";
-const { name, label } = basics;
+const education = [
+  {
+    institution: "東京理科大学",
+    url: "",
+    area: "創域理工学部 先端化学科",
+    studyType: "Full-time student",
+    startDate: "2022-4-01",
+    endDate: null,
+  },
+];
 
-enum PageLayout {
-  SingleColumn = "single-column",
-  TwoColumn = "two-column",
-  Scroll = "scroll",
-}
+const certificates = [
+  {
+    name: "Data Science Education Program Level 1 (Literacy)",
+    date: "2024-03-11",
+    url: "https://www.openbadge-global.com/ns/portal/openbadge/public/assertions/detail/SjR6UlNTandId0tiU24zR0YvQjRjUT09",
+    issuer: "東京理科大学",
+  },
+  {
+    name: "Data Science Education Program Level 2 (Advanced Literacy)",
+    date: "2025-03-12",
+    url: "https://www.openbadge-global.com/api/v1.0/openBadge/v2/Wallet/Public/GetAssertionShare/TThMZ2orQUFvYjkrVlRKV1hEVEFYUT09",
+    issuer: "東京理科大学",
+  },
+];
+
+const work = [
+  {
+    name: "株式会社Shinonome",
+    position: "データエンジニア",
+    location_type: "On-site",
+    location: "JP",
+    url: "https://shinonome.com",
+    startDate: "2024-05-01",
+    endDate: "2025-03-31",
+    summary: "法人向け DX ツール開発に参加し、アルゴリズム設計を担当",
+    highlights: [
+      "非機械学習アルゴリズムを新規開発。",
+      "既存業務プロセスの効率化を実現。",
+    ],
+    responsibilities: ["データ処理および分析用アルゴリズムの設計と実装"],
+    achievements: [
+      "プロジェクト内の主要機能に安定したアルゴリズムを導入",
+      "非効率なプロセスを分析し、具体的な改善案を提案",
+    ],
+    skills: {
+      Python: "mdi:language-python",
+      Rust: "simple-icons:rust",
+      Git: "mdi:git",
+      GitHub: "mdi:github",
+    },
+  },
+];
+
+const affiliation = [
+  {
+    name: "学生テックコミュニティーPlayGround",
+    position: "メンバー",
+    startDate: "2023-05-01",
+    endDate: null,
+    activities: [
+      "データサイエンスコース修了",
+      "フロントエンドコース受講中",
+      "オフラインイベント運営",
+    ],
+    responsibilities: [
+      "コードレビュアーとして課題の確認とフィードバックを実施",
+      "メンターとして新入生の学習をサポート",
+    ],
+    achievements: [
+      "BBQイベントの企画・運営",
+      "クリスマス会の企画・運営",
+      "内製アプリ開発",
+    ],
+    url: "https://playground-universe.com/",
+    skills: {
+      HTML: "simple-icons:html5",
+      CSS: "ri:css3-fill",
+      JavaScript: "simple-icons:javascript",
+      TypeScript: "simple-icons:typescript",
+      React: "mdi:react",
+      "Node.js": "ri:nodejs-line",
+      "Next.js": "ri:nextjs-fill",
+      Astro: "simple-icons:astro",
+      Python: "simple-icons:python",
+      Git: "mdi:git",
+      GitHub: "mdi:github",
+    },
+    location: "Tokyo, Japan",
+  },
+  {
+    name: "理科大プログラミングサークルTND",
+    position: "主宰",
+    startDate: "2024-01-01",
+    endDate: null,
+    activities: ["サークル立ち上げ"],
+    responsibilities: ["サークルの運営全般"],
+    achievements: [
+      "新入生歓迎会の企画・運営",
+      "初年度からメンバー20名達成",
+      "内製アプリ開発",
+    ],
+    url: "https://x.com/TokyorikaND",
+    skills: {
+      HTML: "simple-icons:html5",
+      CSS: "ri:css3-fill",
+      JavaScript: "simple-icons:javascript",
+      TypeScript: "simple-icons:typescript",
+      React: "mdi:react",
+      "Node.js": "ri:nodejs-line",
+      "Next.js": "ri:nextjs-fill",
+      Astro: "simple-icons:astro",
+      Python: "simple-icons:python",
+      Git: "mdi:git",
+      GitHub: "mdi:github",
+      Rust: "simple-icons:rust",
+      "React Native": "mdi:react",
+      Go: "simple-icons:go",
+      Discord: "mdi:discord",
+      "Google Apps Script": "mdi:google",
+    },
+    location: "Noda, Chiba, Japan",
+  },
+];
+
+const skills = [
+  {
+    name: "HTML",
+    icon: "simple-icons:html5",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend"],
+  },
+  {
+    name: "CSS",
+    icon: "ri:css3-fill",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "Responsive Design"],
+  },
+  {
+    name: "JavaScript",
+    icon: "simple-icons:javascript",
+    level: "Expert",
+    keywords: ["Web Development", "Frontend", "Backend", "Fullstack"],
+  },
+  {
+    name: "TypeScript",
+    icon: "simple-icons:typescript",
+    level: "Expert",
+    keywords: ["Web Development", "Frontend", "Backend", "JavaScript Superset"],
+  },
+  {
+    name: "React",
+    icon: "mdi:react",
+    level: "Expert",
+    keywords: ["Web Development", "Frontend", "JavaScript Library", "UI"],
+  },
+  {
+    name: "React Native",
+    icon: "mdi:react",
+    level: "Beginner",
+    keywords: ["Mobile Development", "Frontend", "JavaScript Library"],
+  },
+  {
+    name: "Node.js",
+    icon: "ri:nodejs-line",
+    level: "Intermediate",
+    keywords: ["Web Development", "Backend", "JavaScript", "Server"],
+  },
+  {
+    name: "Next.js",
+    icon: "ri:nextjs-line",
+    level: "Intermediate",
+    keywords: [
+      "Web Development",
+      "Frontend",
+      "React Framework",
+      "SSR",
+      "Static Generation",
+    ],
+  },
+  {
+    name: "Astro",
+    icon: "simple-icons:astro",
+    level: "Intermediate",
+    keywords: ["Web Development", "Frontend", "SSR", "Static Generation"],
+  },
+  {
+    name: "Python",
+    icon: "mdi:language-python",
+    level: "Intermediate",
+    keywords: ["Data Analysis", "Web Development", "Backend"],
+  },
+  {
+    name: "Rust",
+    icon: "simple-icons:rust",
+    level: "Beginner",
+    keywords: ["Systems Programming", "Performance Optimization"],
+  },
+  {
+    name: "Google Apps Script",
+    icon: "mdi:google",
+    level: "Intermediate",
+    keywords: ["Automation", "Scripting"],
+  },
+  {
+    name: "Go",
+    icon: "simple-icons:go",
+    level: "Beginner",
+    keywords: ["Backend", "Cloud Service"],
+  },
+  {
+    name: "Git",
+    icon: "mdi:git",
+    level: "Intermediate",
+    keywords: ["Version Control", "Collaboration", "Source Code"],
+  },
+  {
+    name: "GitHub",
+    icon: "mdi:github",
+    level: "Expert",
+    keywords: ["Version Control", "Collaboration", "Source Code", "Git"],
+  },
+  {
+    name: "Discord",
+    icon: "mdi:discord",
+    level: "Intermediate",
+    keywords: ["Community Management", "Collaboration"],
+  },
+  {
+    name: "ChatGPT",
+    icon: "mdi:robot",
+    level: "Intermediate",
+    keywords: ["AI", "Automation", "Content Creation"],
+  },
+  {
+    name: "Chemofice",
+    icon: "mdi:flask",
+    level: "Intermediate",
+    keywords: ["Chemistry", "Data Analysis"],
+  },
+  {
+    name: "Tailwind CSS",
+    icon: "mdi:tailwind",
+    level: "Intermediate",
+    keywords: ["CSS Framework", "Frontend", "Responsive Design"],
+  },
+  {
+    name: "Docker",
+    icon: "mdi:docker",
+    level: "Intermediate",
+    keywords: ["Containerization", "DevOps"],
+  },
+  {
+    name: "SQL",
+    icon: "simple-icons:mysql",
+    level: "Intermediate",
+    keywords: ["Databases", "Data Storage"],
+  },
+  {
+    name: "Vercel",
+    icon: "simple-icons:vercel",
+    level: "Intermediate",
+    keywords: ["Serverless", "Static Site Hosting"],
+  },
+];
+
+const projects = [
+  {
+    name: "Deloitte×PlayGround 防災ハッカソン 2023 グランプリ",
+    image: {
+      url: "https://storage.googleapis.com/studio-cms-assets/projects/xPORP939ar/s-2400x1350_v-frms_webp_81c45d2a-7c34-42e4-9299-fdca4de9c915.webp",
+      position: "container",
+    },
+    isActive: true,
+    description: "自治体の防災課題を解決するプロダクトを作るハッカソン",
+    highlights: [
+      "6週間のハッカソン期間中、チームでの開発を行い、最終的にグランプリを受賞",
+      "リーンスタートアップ手法を用いた開発",
+    ],
+    url: "https://playground-universe.com/nwFkz1q_/BosaiHackathon",
+  },
+  {
+    name: '【初心者必見】"Python書けます！"と自信を持って言えるようになろう',
+    image: {
+      url: "https://blog.shinonome.io/content/images/size/w1200/2024/11/26ff1ff0-4674-48e4-b986-3e359712ed50.webp",
+      position: "container",
+    },
+    isActive: true,
+    description: "Shinonome テックブログ",
+    highlights: ["Pythonの基本的な文法を解説"],
+    url: "https://blog.shinonome.io/python-basics-confidence/",
+  },
+  {
+    name: "化学実験で使える検量線アプリをPythonで手軽に開発する方法",
+    image: {
+      url: "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-image-store.s3.ap-northeast-1.amazonaws.com%2F0%2F3686753%2Fe2a057de-318a-db6d-0cf6-06a950aeca3b.png?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=6d7fc0fae0eded9ac5f71e713c4d76ff",
+      position: "container",
+    },
+    isActive: true,
+    description: "Qiitaアドベントカレンダーでいいね賞受賞",
+    highlights: [
+      "PythonのmatplotlibとStreamlitを組み合わせて、グラフアプリを作った話",
+    ],
+    url: "https://qiita.com/rya_ryo12357/items/63a5d07f1157eff1e12f",
+  },
+  {
+    name: "Pixel純正ターミナルでPython環境を構築してみた",
+    image: {
+      url: "https://helentech.jp/wp-content/uploads/2025/03/Google-Pixel-Android-Linux-Terminal-appGoogle-Pixel-Android-Linux-Terminal-app2.webp",
+      position: "container",
+    },
+    isActive: true,
+    description: "Qiitaテックブログ",
+    highlights: ["50,000 Views突破"],
+    url: "https://qiita.com/rya_ryo12357/items/ee8479a92d4a1bfb36f3",
+  },
+];
 ---
 
-<Layout title={`${name}'s' Portfolio - ${label}`}>
-  <main
-    class="relative grid h-full max-w-7xl gap-12 p-8 max-sm:py-16 md:min-h-screen md:grid-cols-6 md:p-16 xl:gap-24 print:max-w-none print:grid-cols-1 print:gap-6"
-  >
-    <div
-      class="slide-enter space-y-6 ease-in md:col-span-2 print:col-span-1 print:grid print:grid-cols-2 print:gap-5 print:space-y-0"
-    >
-      <Hero />
-      <About />
-      <ThemeSwitch />
+<Layout
+  title={`${basics.name}'s Portfolio`}
+  description={basics.summary}
+  theme={basics.theme}
+>
+  <main class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <!-- Theme Selector -->
+    <div class="mb-8 flex justify-end">
+      <ThemeSelector client:load />
     </div>
-    <div
-      class="slide-enter-content space-y-12 md:col-span-4 print:col-span-1 print:grid print:grid-cols-4 print:gap-2 print:space-y-0"
-    >
-      <Affiliation className="print:col-span-3" />
-      <Experience className="print:col-span-3" />
-      {
-        (CV?.pageLayout === PageLayout.TwoColumn || !CV?.pageLayout) && (
-          <>
-            <Projects className="print:hidden" />
-            {CV?.images && <Images className="print:hidden" />}
-            {CV?.education && <Education className="order-first" />}
-            <Skills className="print:hidden" />
-          </>
-        )
-      }
-    </div>
-  </main>
-  {
-    CV?.pageLayout !== PageLayout.TwoColumn && (
-      <>
-        <div class="border-t border-solid border-skin-hue print:hidden" />
-        {CV?.pageLayout === PageLayout.SingleColumn && (
-          <main class="relative grid max-w-[82rem] gap-12 p-8 max-sm:py-16 md:grid-cols-6 md:p-16 xl:gap-24 print:max-w-none print:grid-cols-1 print:gap-6">
-            <div class="slide-enter-content space-y-6 md:col-span-6">
-              <Projects className="print:hidden" />
-              {CV?.images && <Images className="print:hidden" />}
-              {CV?.education && <Education className="order-first" />}
-              <Skills className="print:hidden" />
-            </div>
-          </main>
-        )}
 
-        {CV.pageLayout === PageLayout.Scroll && (
-          <main class="max-w-[97%] p-8 max-md:!max-w-7xl max-sm:py-16 print:max-w-none print:grid-cols-1 print:gap-6">
-            <div
-              id="carousel"
-              class="slide-enter-content scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 mx-auto md:col-span-6 md:overflow-x-auto md:overflow-y-auto print:max-w-none print:grid-cols-1 print:gap-6"
+    <!-- Hero Section -->
+    <section class="mb-16">
+      <div
+        class="flex flex-col-reverse gap-8 md:flex-row md:items-start md:justify-between"
+      >
+        <div class="flex-1 space-y-4">
+          <h1
+            class="text-4xl font-bold tracking-tight text-skin-base sm:text-5xl md:text-6xl"
+          >
+            {basics.name}
+          </h1>
+          <div class="flex items-center gap-2 text-lg text-skin-muted">
+            <Icon name="mdi:world" class="h-5 w-5" />
+            <span>{basics.location.address}, {basics.location.region}</span>
+          </div>
+          <p class="max-w-2xl text-lg text-skin-muted">
+            {basics.summary}
+          </p>
+          <div class="flex gap-3 pt-4">
+            <a
+              href={`mailto:${basics.email}`}
+              class="inline-flex h-10 items-center justify-center rounded-md bg-skin-button-accent px-4 py-2 text-sm font-medium text-skin-inverted transition-colors hover:bg-skin-button-accent/90"
             >
-              <div class="flex space-x-0 pb-4 max-md:gap-4 max-sm:flex-col max-sm:space-y-4 md:px-4">
-                <Projects className="flex-shrink-0 w-full print:hidden border-skin-hue md:border-solid md:border md:p-4" />
-                {CV?.images && (
-                  <Images className="flex-shrink-0 w-full print:hidden border-skin-hue md:border-solid md:border md:p-4" />
-                )}
-                {CV?.education && (
-                  <Education className="flex-shrink-0 w-full md:w-1/3 print:order-first border-skin-hue md:border-solid md:border md:p-4" />
-                )}
-                <Skills className="flex-shrink-0 w-full md:w-1/3 print:hidden border-skin-hue md:border-solid md:border md:p-4" />
-              </div>
+              <Icon name="mdi:email" class="mr-2 h-4 w-4" />
+              Contact
+            </a>
+            {
+              basics.profiles.map((profile) => (
+                <a
+                  href={profile.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex h-10 items-center justify-center rounded-md border border-skin-hue/20 bg-transparent px-4 py-2 text-sm font-medium text-skin-hue transition-colors hover:bg-skin-button-muted"
+                >
+                  <Icon name={profile.icon} class="mr-2 h-4 w-4" />
+                  {profile.network}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="relative">
+          <Image
+            src={basics.image}
+            alt={basics.name}
+            width={200}
+            height={200}
+            class="rounded-2xl shadow-lg"
+          />
+          <div class="pointer-events-none absolute -inset-2">
+            <div
+              class="absolute -inset-y-8 right-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+            >
             </div>
-          </main>
-        )}
-      </>
-    )
-  }
-  <Tail />
+            <div
+              class="absolute -inset-y-8 left-0 w-px bg-skin-hue/50 [mask-image:linear-gradient(to_top,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+            >
+            </div>
+            <div
+              class="absolute -inset-x-8 bottom-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+            >
+            </div>
+            <div
+              class="absolute -inset-x-8 top-0 h-px bg-skin-hue/50 [mask-image:linear-gradient(to_left,transparent,white_4rem,white_calc(100%-4rem),transparent)]"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Work Experience
+      </h2>
+      <div class="space-y-6">
+        {
+          work.map((job) => (
+            <Card
+              className="border-skin-hue/20 bg-skin-button-muted/50"
+              client:load
+            >
+              <CardHeader>
+                <div class="flex items-start justify-between">
+                  <div class="space-y-1">
+                    <CardTitle className="text-skin-base">
+                      <a
+                        href={job.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="transition-colors hover:text-skin-hue"
+                      >
+                        {job.name}
+                      </a>
+                    </CardTitle>
+                    <CardDescription className="text-skin-muted">
+                      {job.position}
+                    </CardDescription>
+                  </div>
+                  <span class="text-sm text-skin-muted">
+                    {job.startDate} - {job.endDate || "Present"}
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p class="mb-4 text-sm text-skin-muted">{job.summary}</p>
+                {job.highlights.length > 0 && (
+                  <div class="mb-4">
+                    <h4 class="mb-2 text-sm font-semibold text-skin-base">
+                      Highlights:
+                    </h4>
+                    <ul class="ml-4 list-disc space-y-1 text-sm text-skin-muted">
+                      {job.highlights.map((highlight) => (
+                        <li>{highlight}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div class="flex flex-wrap gap-2">
+                  {Object.entries(job.skills).map(([skill, icon]) => (
+                    <Badge
+                      variant="secondary"
+                      className="border-skin-hue/20 bg-skin-button-accent/20 text-skin-hue"
+                      client:load
+                    >
+                      <Icon name={icon as string} class="mr-1 h-3 w-3" />
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Affiliation Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Affiliation
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          affiliation.map((org) => (
+            <Card
+              className="border-skin-hue/20 bg-skin-button-muted/50"
+              client:load
+            >
+              <CardHeader>
+                <div class="space-y-1">
+                  <CardTitle className="text-skin-base">
+                    <a
+                      href={org.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="transition-colors hover:text-skin-hue"
+                    >
+                      {org.name}
+                    </a>
+                  </CardTitle>
+                  <CardDescription className="text-skin-muted">
+                    {org.position}
+                  </CardDescription>
+                  {org.location && (
+                    <p class="flex items-center gap-1 text-xs text-skin-muted">
+                      <Icon name="mdi:map-marker" class="h-3 w-3" />
+                      {org.location}
+                    </p>
+                  )}
+                </div>
+              </CardHeader>
+              <CardContent>
+                {org.achievements.length > 0 && (
+                  <div class="mb-4">
+                    <h4 class="mb-2 text-sm font-semibold text-skin-base">
+                      Achievements:
+                    </h4>
+                    <ul class="ml-4 list-disc space-y-1 text-sm text-skin-muted">
+                      {org.achievements.map((achievement) => (
+                        <li>{achievement}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div class="flex flex-wrap gap-2">
+                  {Object.entries(org.skills).map(([skill, icon]) => (
+                    <Badge
+                      variant="outline"
+                      className="text-xs border-skin-hue/20 text-skin-muted"
+                      client:load
+                    >
+                      <Icon name={icon as string} class="mr-1 h-3 w-3" />
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Pick Up Projects
+      </h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          projects.map((project) => (
+            <Card
+              className="border-skin-hue/20 bg-skin-button-muted/50 overflow-hidden"
+              client:load
+            >
+              <CardHeader>
+                <div class="flex items-start justify-between">
+                  <CardTitle className="text-skin-base">
+                    {project.isActive ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center gap-2 transition-colors hover:text-skin-hue"
+                      >
+                        <Icon name="mdi:folder-outline" class="h-5 w-5" />
+                        {project.name}
+                        <Icon
+                          name="ri:arrow-up-line"
+                          class="h-4 w-4 rotate-45"
+                        />
+                      </a>
+                    ) : (
+                      <span class="flex items-center gap-2">
+                        <Icon name="mdi:folder-outline" class="h-5 w-5" />
+                        {project.name}
+                      </span>
+                    )}
+                  </CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p class="mb-3 text-sm text-skin-muted">
+                  {project.description}
+                </p>
+                {project.highlights.length > 0 && (
+                  <ul class="mb-4 ml-4 list-disc space-y-1 text-sm text-skin-muted">
+                    {project.highlights.map((highlight) => (
+                      <li>{highlight}</li>
+                    ))}
+                  </ul>
+                )}
+                {project.image && project.image.position === "container" && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={project.image.url}
+                      alt={project.name}
+                      width={800}
+                      height={450}
+                      class="rounded-lg transition-transform hover:scale-105"
+                    />
+                  </a>
+                )}
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
+      <div class="mt-8 flex justify-center">
+        <a
+          href="/blog"
+          class="group inline-flex items-center gap-2 rounded-md bg-skin-button-muted/50 px-6 py-3 text-sm font-medium text-skin-base transition-colors hover:bg-skin-button-muted"
+        >
+          Read More
+          <Icon
+            name="ri:arrow-up-line"
+            class="h-4 w-4 rotate-45 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+          />
+        </a>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Education
+      </h2>
+      <div class="space-y-6">
+        {
+          education.map((edu) => (
+            <Card
+              className="border-skin-hue/20 bg-skin-button-muted/50"
+              client:load
+            >
+              <CardHeader>
+                <div class="flex items-start justify-between">
+                  <div class="space-y-1">
+                    <CardTitle className="text-skin-base">
+                      {edu.institution}
+                    </CardTitle>
+                    <CardDescription className="text-skin-muted">
+                      {edu.area}
+                    </CardDescription>
+                    <p class="text-sm text-skin-muted">{edu.studyType}</p>
+                  </div>
+                  <span class="text-sm text-skin-muted">
+                    {edu.startDate} - {edu.endDate || "Present"}
+                  </span>
+                </div>
+              </CardHeader>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Certificates
+      </h2>
+      <div class="grid gap-4 md:grid-cols-2">
+        {
+          certificates.map((cert) => (
+            <Card
+              className="border-skin-hue/20 bg-skin-button-muted/50"
+              client:load
+            >
+              <CardHeader>
+                <CardTitle className="text-base text-skin-base">
+                  <a
+                    href={cert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="transition-colors hover:text-skin-hue"
+                  >
+                    {cert.name}
+                  </a>
+                </CardTitle>
+                <CardDescription className="text-skin-muted">
+                  {cert.issuer} • {cert.date}
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="mb-16">
+      <h2 class="mb-6 text-3xl font-bold tracking-tight text-skin-base">
+        Skills
+      </h2>
+      <div class="flex flex-wrap gap-3">
+        {
+          skills.map((skill) => (
+            <Badge
+              variant="secondary"
+              className="border-skin-hue/20 bg-skin-button-accent/20 text-skin-hue px-3 py-1.5"
+              client:load
+            >
+              <Icon name={skill.icon} class="mr-1.5 h-4 w-4" />
+              <span class="text-sm">{skill.name}</span>
+            </Badge>
+          ))
+        }
+      </div>
+    </section>
+  </main>
 </Layout>
 
-<script>
-  const carousel = document.querySelector("#carousel");
-
-  if (carousel) {
-    let isScrolling = true;
-    let scrollSpeed = 2;
-    let direction = 1;
-    let pauseTimeout: NodeJS.Timeout;
-
-    const startAutoScroll = () => {
-      const scroll = () => {
-        if (!isScrolling) return;
-
-        if (
-          //@ts-ignore
-          carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth ||
-          carousel.scrollLeft <= 0
-        ) {
-          direction *= -1;
-          isScrolling = false;
-          clearTimeout(pauseTimeout);
-          pauseTimeout = setTimeout(() => {
-            isScrolling = true;
-            requestAnimationFrame(scroll);
-          }, 1000);
-        }
-
-        carousel.scrollLeft += scrollSpeed * direction;
-        requestAnimationFrame(scroll);
-      };
-
-      requestAnimationFrame(scroll);
-    };
-
-    const stopAutoScroll = () => {
-      isScrolling = false;
-    };
-
-    const handleUserInteraction = () => {
-      stopAutoScroll();
-      setTimeout(() => {
-        isScrolling = true;
-      }, 500);
-    };
-
-    startAutoScroll();
-
-    carousel.addEventListener("mousedown", handleUserInteraction);
-    carousel.addEventListener("wheel", handleUserInteraction);
-    carousel.addEventListener("touchstart", handleUserInteraction);
-  } else {
-    console.log("Not in Scroll mode");
-  }
-</script>
-
 <style>
-  /* 自定义滚动条样式 */
-  .scrollbar-thin::-webkit-scrollbar {
-    height: 8px;
-  }
-  .scrollbar-thumb-gray-400::-webkit-scrollbar-thumb {
-    background-color: #a0aec0;
-    border-radius: 4px;
-  }
-</style>
-
-<style is:global>
-  * {
-    scrollbar-color: var(--color-button-muted) var(--color-fill);
-  }
-
-  @page {
-    size: auto;
-    margin: 0mm;
-  }
-  main {
-    margin: auto;
-    width: 100%;
-  }
-
   @keyframes slide-enter {
     0% {
       transform: translateY(10px);
       opacity: 0;
     }
-
     to {
       transform: translateY(0);
       opacity: 1;
@@ -183,76 +765,8 @@ enum PageLayout {
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    .slide-enter,
-    .slide-enter-content > *:not(:has(.table-of-contents)) {
-      --enter-stage: 0;
-      --enter-step: 400ms;
-      --enter-initial: 0ms;
-      animation: slide-enter 1s both 1;
-      animation-delay: calc(
-        var(--enter-initial) + var(--enter-stage) * var(--enter-step)
-      );
-    }
-
-    .slide-enter-content > *:nth-child(1) {
-      --enter-stage: 1 !important;
-    }
-    .slide-enter-content > *:nth-child(2) {
-      --enter-stage: 2 !important;
-    }
-    .slide-enter-content > *:nth-child(3) {
-      --enter-stage: 3 !important;
-    }
-    .slide-enter-content > *:nth-child(4) {
-      --enter-stage: 4 !important;
-    }
-    .slide-enter-content > *:nth-child(5) {
-      --enter-stage: 5 !important;
-    }
-    .slide-enter-content > *:nth-child(6) {
-      --enter-stage: 6 !important;
-    }
-    .slide-enter-content > *:nth-child(7) {
-      --enter-stage: 7 !important;
-    }
-    .slide-enter-content > *:nth-child(8) {
-      --enter-stage: 8 !important;
-    }
-    .slide-enter-content > *:nth-child(9) {
-      --enter-stage: 9 !important;
-    }
-    .slide-enter-content > *:nth-child(10) {
-      --enter-stage: 10 !important;
-    }
-    .slide-enter-content > *:nth-child(11) {
-      --enter-stage: 11 !important;
-    }
-    .slide-enter-content > *:nth-child(12) {
-      --enter-stage: 12 !important;
-    }
-    .slide-enter-content > *:nth-child(13) {
-      --enter-stage: 13 !important;
-    }
-    .slide-enter-content > *:nth-child(14) {
-      --enter-stage: 14 !important;
-    }
-    .slide-enter-content > *:nth-child(15) {
-      --enter-stage: 15 !important;
-    }
-    .slide-enter-content > *:nth-child(16) {
-      --enter-stage: 16 !important;
-    }
-    .slide-enter-content > *:nth-child(17) {
-      --enter-stage: 17 !important;
-    }
-    .slide-enter-content > *:nth-child(18) {
-      --enter-stage: 18 !important;
-    }
-    .slide-enter-content > *:nth-child(19) {
-      --enter-stage: 19 !important;
-    }
-    .slide-enter-content > *:nth-child(20) {
-      --enter-stage: 20 !important;
+    section {
+      animation: slide-enter 0.6s ease-out;
     }
   }
 </style>
