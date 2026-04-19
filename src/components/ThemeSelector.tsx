@@ -12,15 +12,15 @@ const themes = [
 ];
 
 export default function ThemeSelector() {
-  const [currentTheme, setCurrentTheme] = useState("Orange");
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    if (typeof window === "undefined") return "Orange";
+    return localStorage.getItem("portfolio-theme") || "Orange";
+  });
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Load theme from localStorage on mount
-    const savedTheme = localStorage.getItem("portfolio-theme") || "Orange";
-    setCurrentTheme(savedTheme);
-    document.body.setAttribute("data-theme", savedTheme);
-  }, []);
+    document.body.setAttribute("data-theme", currentTheme);
+  }, [currentTheme]);
 
   const handleThemeChange = (theme: string) => {
     setCurrentTheme(theme);

@@ -115,7 +115,6 @@ Custom themes can be added by:
 | `pnpm dev`               | Start development server at `localhost:4321` |
 | `pnpm build`             | Build production site to `./dist/`           |
 | `pnpm preview`           | Preview production build locally             |
-| `pnpm deploy:vercel`     | Deploy to Vercel                             |
 | `pnpm deploy:cloudflare` | Deploy to Cloudflare Pages                   |
 
 ## 📦 Project Structure
